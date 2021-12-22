@@ -1,0 +1,4 @@
+addition 4 5
+substraction 3 2
+multiplication 9 3
+division 12 3
