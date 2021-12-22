@@ -1,6 +1,7 @@
-package com;
-import session1.*;
-import java.util.*;
+package session1;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 public class City {
     private String Cityname;
     private List<Employee> employee=new ArrayList<>();

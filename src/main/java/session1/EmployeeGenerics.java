@@ -1,7 +1,7 @@
-import java.sql.Array;
-import java.util.ArrayList;
+package session1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 public class EmployeeGenerics<T> {
     public static void main(String[]args){
         EmpGen<String> gen=new EmpGen<>();

@@ -1,5 +1,5 @@
 package calEngine;
-    public class InvalidStatementException extends Exception{
+    public class InvalidStatementException extends RuntimeException{
         public InvalidStatementException(String message){
             super(message);
         }

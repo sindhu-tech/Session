@@ -7,7 +7,7 @@ import java.io.IOException;
 
         public static void main(String[] args){
             try (BufferedReader reader = new BufferedReader(new FileReader(
-                    "/Users/a206073/IdeaProjects/Collections_Streams/src/calEngine/DemoCal.txt"))) {
+                    "/Users/a206073/IdeaProjects/Streams_Collections_Exceptions/src/main/java/calEngine/DemoCal.txt"))) {
                 processFile(reader);
             } catch (FileNotFoundException ex) {
                 System.out.println("File not found:" + ex.getMessage());
@@ -21,14 +21,14 @@ import java.io.IOException;
             }
         }
 
-        private static void processFile(BufferedReader reader) throws IOException,InvalidStatementException{
+        private static void processFile(BufferedReader reader) throws IOException{
             String InputLine;
             while ((InputLine = reader.readLine()) != null) {
                 performOperation(InputLine);
             }
         }
 
-        private static void performOperation(String InputLine) throws InvalidStatementException {
+        private static void performOperation(String InputLine) {
             String[] parts = InputLine.split(" ");
             if(parts.length!=3){
                 throw new InvalidStatementException("the statement must contain three parts");
@@ -53,12 +53,13 @@ import java.io.IOException;
                     result = leftVal * rightVal;
                     break;
                 case "DIVISION":
-                    if (rightVal == 0) {
+                    /*if (rightVal == 0) {
                         /** IllegalArgumentException exception =
                          new IllegalArgumentException("zero rightval is not permitted with division");
                          throw exception;*/
-                        throw new IllegalArgumentException("zero rightval is not permitted with division");
-                    }
+                        //throw new IllegalArgumentException("zero rightval is not permitted with division");
+                   // }
+
                     result = leftVal / rightVal;
                     break;
             }

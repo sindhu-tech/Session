@@ -1,13 +1,13 @@
 package session1;
-import com.*;
-import com.sun.tools.javac.util.List;
+//import com.sun.tools.javac.util.List;
 import java.util.*;
 import java.util.stream.*;
 import java.util.regex.*;
 
+
 public class Employee_Details {
     public static void main(String[] args) {
-        /*List<Employee> employee = new ArrayList<Employee>();
+        /*List<Employee> employee = new List<Employee>();
         employee.add(new Employee(1, "Ram", "20000",55));
         employee.add(new Employee(2, "John", "50000",23));
         employee.add(new Employee(3, "Jack", "39200",66));
@@ -16,11 +16,15 @@ public class Employee_Details {
         employee.add(new Employee(6, "Dravid", "87333",31));
         employee.add(new Employee(7, "Joe", "33333",35));
         employee.add(new Employee(8, "Poppy", "25000",24));
+        employee.add(new Employee(9, "Peter", "58000",43));
+        employee.add(new Employee(10, "Sarah", "60000",31));
+        employee.add(new Employee(11, "", "23444",21));
          employee.forEach((n) -> {
             System.out.println(n.id + " " + n.name + " " + n.salary+" "+n.age);
         });
-
          */
+
+
         Employee e1=new Employee(1, "Ram", "20000",55);
         Employee e2=new Employee(2, "John", "50000",23);
         Employee e3=new Employee(3, "Jack", "39200",55);
@@ -40,11 +44,14 @@ public class Employee_Details {
 
 
 
+
+
         /* Five patterns to create streams-from collections,array,text fike,regular expression,string*/
 
         //1.Streams from array
         System.out.println("Streams from Array:");
-        Employee[] employeeArray={e1,e2,e3,e4,e5};
+       // Employee[] employeeArray = (Employee[]) (in.subList(0, 5)).toArray();
+       Employee[] employeeArray={e1,e2,e3,e4,e5};
         //one way
         long count=Stream.of(employeeArray).count();
         System.out.println("count="+count);
@@ -75,7 +82,8 @@ public class Employee_Details {
 
 
 
-        List<Employee> employee=List.of(e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11);
+        //List<Employee> employee=List.of(e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11);
+        List<Employee> employee=Arrays.asList(e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11);
 
          /*
         //creating streams
@@ -120,7 +128,8 @@ public class Employee_Details {
 
 
         //flat mapping-one to many enitites
-        List<City> cities=List.of(banglore,chennai,hyderabad);
+        //List<City> cities=List.of(banglore,chennai,hyderabad);
+        List<City> cities=Arrays.asList(banglore,chennai,hyderabad);
         long count3=cities.stream()
                 .flatMap(city->city.getEmployee().stream())
                 .count();
